@@ -24,3 +24,24 @@ class Darts():
 
         # dupla motorkezelő
         self.robot = DriveBase(self.jm, self.bm, 55, 115)
+
+        #stopper óra
+        self.ido = StopWatch()
+
+
+    def csipog(self):
+        self.ev3.speaker.beep()
+
+    def darts1(self):
+        #Rajzoljuk ki egy kör alakú céltáblát, majd véletlen lövöldözöóünk ré
+        #Kijelző méretei: 0-177*0-122, bal felső sarok(0,0)
+        #képernyő törlése
+        self.ev3.screen.clear()
+        #körünk
+        self.eve3.screen.draw_circle(90,50,50,
+        fill=True, color=Color.BLACK)
+
+        #10 véletlen lövés
+        
+        wait(5000)
+

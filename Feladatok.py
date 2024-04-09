@@ -98,7 +98,7 @@ class Feladatok():
         #d.	Mérjétek meg milyen széles a csík idővel. Tároljátok egy listába el.
         hosszok = []
         self.robot.drive(100,0)
-        for vonalakSzama in range(5):
+        for vonalakSzama in range(6):
             vege = False
             fekete = False
             self.robot.drive(100,0)
@@ -117,13 +117,13 @@ class Feladatok():
 
     def elsoe(self):
         # e.	Annyit csipogjon ahányadik helyen van az egy vastagabb.
-        hosszok= elsod()
+        hosszok= self.elsod()
 
         # hosszok kiírása
         # képernyő törlése
         self.ev3.screen.clear()
         for index in range(len(hosszok)):
-            ev3.screen.print(hosszok[index])
+            self.ev3.screen.print(hosszok[index])
         wait(5000)
 
         # Annyit csipogjon ahányadik helyen van az egy vastagabb.
@@ -164,6 +164,7 @@ class Feladatok():
         for index in range(len(hosszok)):
             if hosszok[index]<kozepertek:
                 self.ev3.speaker.beep(440,100)
+                wait(180)
             else:
                 self.ev3.speaker.beep(440,200)
         wait(100)

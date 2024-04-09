@@ -14,8 +14,10 @@ oraimunka = Feladatok.Feladatok()
 # oraimunka.elsob()
 # oraimunka.elsoc()
 #print(oraimunka.elsod())
-oraimunka.elsoe()
+#oraimunka.elsoe()
 #oraimunka.elsof()
 
-
-oraimunka.csipog()
+#oraimunka.csipog()
+oraimunka2=Darts.Darts()
+oraimunka2.darts1()
+oraimunka2.csipog()

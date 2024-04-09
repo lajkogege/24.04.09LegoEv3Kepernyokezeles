@@ -38,10 +38,10 @@ class Darts():
         #képernyő törlése
         self.ev3.screen.clear()
         #körünk
-        self.eve3.screen.draw_circle(90,50,50,
+        self.ev3.screen.draw_circle(90,60,60,
         fill=True, color=Color.BLACK)
 
         #10 véletlen lövés
-        
+
         wait(5000)
 

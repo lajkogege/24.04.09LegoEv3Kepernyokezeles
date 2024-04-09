@@ -5,6 +5,7 @@ from pybricks.parameters import Port, Stop, Direction, Button, Color
 from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
+import random
 
 class Darts():
 
@@ -42,6 +43,19 @@ class Darts():
         fill=True, color=Color.BLACK)
 
         #10 véletlen lövés
-
+        for loves in range (0,10,1):
+            x=random.randint(0,177)
+            y=random.randint(0,127)
+            #eltaláltuk a céltáblát? majd lövés kirajzolása
+            if(90-x)**2+(60-y)**2<=50**2:
+                #talált
+                self.ev3.screen.draw_circle(x,y,2,
+                fill=True, color=Color.WHITE)
+            else:
+                #nem talált
+                self.ev3.screen.draw_circle(x,y,2,
+                fill=True, color=Color.BLACK)
+            self.csipog()
+            wait(100)
         wait(5000)
 

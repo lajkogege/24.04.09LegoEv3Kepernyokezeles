@@ -75,5 +75,31 @@ class Darts():
         r=5
         y=random.randint(0+r, 127-r)
         self.ev3.screen.draw_circle(0+r,y,r, fill=True, color=Color.BLACK)
+        for x in range(177+r+1):
+            #kirajzolja a kört
+            self.ev3.screen.draw_circle(x+y+r, 
+            fill=True, color=Color.BLACK)
+            wait(30)
+            #letörlöm a képernyőt
+            self.ev3.screen.clear()
+        wait(5000)
+
+ def darts2b(self):
+        #animáljuk a golyó mozgását, letörlés modszerével
+        #tábla kirajzolása
+        self.ev3.screen.draw_box(172,40,177,80,  fill=True, color=Color.BLACK)
         
+        #bal szélére véletlenszerüen megjelnitjük a golyót
+        r=5
+        y=random.randint(0+r, 127-r)
+        self.ev3.screen.draw_circle(0+r,y,r, fill=True, color=Color.BLACK)
+        for x in range(177+r+1):
+            #kirajzolja a kört
+            self.ev3.screen.draw_circle(x+y+r, 
+            fill=True, color=Color.BLACK)
+            wait(30)
+            #eltakarom egy másik körrel
+             self.ev3.screen.draw_circle(x+y+r, 
+            fill=True, color=Color.BLACK)
+            wait(30)
         wait(5000)

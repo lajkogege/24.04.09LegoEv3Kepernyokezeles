@@ -20,5 +20,6 @@ oraimunka = Feladatok.Feladatok()
 
 #oraimunka.csipog()
 oraimunka2=Darts.Darts()
-oraimunka2.darts1()
+#oraimunka2.darts1()
+oraimunka2.darts2a()
 oraimunka2.csipog()

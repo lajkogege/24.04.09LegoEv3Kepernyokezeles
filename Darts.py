@@ -41,8 +41,10 @@ class Darts():
         #körünk
         self.ev3.screen.draw_circle(90,60,60,
         fill=True, color=Color.BLACK)
+        szamlalo=0
 
         #10 véletlen lövés
+        db=0
         for loves in range (0,10,1):
             x=random.randint(0,177)
             y=random.randint(0,127)
@@ -51,11 +53,27 @@ class Darts():
                 #talált
                 self.ev3.screen.draw_circle(x,y,2,
                 fill=True, color=Color.WHITE)
+                db+=1
             else:
                 #nem talált
                 self.ev3.screen.draw_circle(x,y,2,
                 fill=True, color=Color.BLACK)
             self.csipog()
             wait(100)
+
+        #találatok száma kiirása
+        szoveg="Talált: "+ str(db)+"."
+        self.ev3.screen.draw_text(80,100,szoveg, text_color=Color.WHITE, background_color=BLACK) 
         wait(5000)
 
+    def darts2a(self):
+        #animáljuk a golyó mozgását, letörlés modszerével
+        #tábla kirajzolása
+        self.ev3.screen.draw_box(172,40,177,80,  fill=True, color=Color.BLACK)
+        
+        #bal szélére véletlenszerüen megjelnitjük a golyót
+        r=5
+        y=random.randint(0+r, 127-r)
+        self.ev3.screen.draw_circle(0+r,y,r, fill=True, color=Color.BLACK)
+        
+        wait(5000)
